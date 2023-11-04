@@ -1,5 +1,6 @@
 library(dplyr)
-
+library(arules)
+library(arulesViz)
 
 # Reading data
 data <- read.csv("Assignment-1_Data.csv", header=TRUE, sep=";")
@@ -25,4 +26,23 @@ data$Itemname <- gsub(" ", "_", data$Itemname)
 
 # Save the prepared data to csv as "read.transactions" accepts this format as input.
 write.csv(data, file='prepared_data.csv', row.names=FALSE)
+
+
+# Transactions analysis using apriori algorithm.
+transactions <- read.transactions("prepared_data.csv", format="single", header=TRUE, cols=c(1, 2))
+str(transactions)
+
+rules <- apriori(transactions, parameter = list(supp = 0.01, conf = 0.5))
+inspect(rules[0:100])
+
+# Selection 50 rules with highest confidence.
+subrules <- head(rules, n = 50, by = "confidence")
+
+# Plotting selected rules as graph.
+plot(subrules, method = "graph",  engine = "htmlwidget")
+
+# Support vs Confidence plot.
+plot(rules, shading="order", control=list(main = "Support vs Confidence", 
+                                          col=rainbow(10)), jitter=0)
+
 
