@@ -42,16 +42,41 @@ I decided to look for rules with a minimum support of 0.01 and a confidence of 0
 
 ## Results 
 
-As a result, 1167 rules have been found. 
-[image]()
+As a result, 1167 rules have been found.  
+
+
+![](https://github.com/mmadajski/Shopping-association-rules/blob/main/Images/Support_vs_Confidence.png)
 
 On the plot above we can see that most of the rules have support in range `[0.01, 0.03]`.
 A lot of the found rules have very high confidence, more than 80%.
 
 Of all the rules, the 50 with the highest confidence were selected to plot the rules graph.
-Interesting findings: 
+Here are some interesting findings. 
 
-[image]()
+Herbs: 
+
+![](https://github.com/mmadajski/Shopping-association-rules/blob/main/Images/Herbs_rules.png)
+
+The group of rules with the highest confidence were those containing herbs. As you can see, the rules in this group were strongly related to each other.
+The characteristic feature of this group is a confidence level of around 92%, and a very high lift of around 72.
+High lift measure suggest that if customer buys one these herbs, he is far more likley to buy other herbs.
+
+Maybe we should display one of the herbs for sale or put it in a visable place in the store so the customer is more likely to buy it? That way there is a better chance that customers will buy more.
+
+Bags: 
+
+![](https://github.com/mmadajski/Shopping-association-rules/blob/main/Images/Bags_rules.png)
+
+As with herbs, another strongly related group is the bag group. Confidence in this group is also around 92%, but the lift of 18 is not as high as in the previous group.
+Rule: 
+CHARLOTTE BAG PINK POLKADOT, CHARLOTTE BAG SUKI DESIGN, STRAWBERRY CHARLOTTE BAG, WOODLAND CHARLOTTE BAG => RED RETROSPOT CHARLOTTE BAG,
+suggests that perhaps we should sell these bags as a set.
+
+Tea plates:
+
+![](https://github.com/mmadajski/Shopping-association-rules/blob/main/Images/Tea_plates_rules.png)
+
+Due to high lift in this group at around 45, I would suggest creating a set of plates and selling them as one. 
 
 ---
 
