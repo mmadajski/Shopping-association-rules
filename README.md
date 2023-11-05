@@ -8,7 +8,7 @@ The R language was chosen as the main tool because of its strong association rul
 
 ## Table of Contents
 - [Project Overview](#project-overview)
-- [Dataset and data preparation](#dataset and data preparation)
+- [Dataset and data preparation](#dataset-and-data-preparation)
 - [Associative Analysis](#associative-analysis)
 - [Results](#results)
 - [Requirements](#requirements)
